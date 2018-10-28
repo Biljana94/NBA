@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TeamsController@index');
+
+Route::get('/teams/{id}', 'TeamsController@show')->name('teams.show'); //ruta koja nas vodi na svaki tim posebno
+
+Route::get('players/{id}', 'PlayersController@show'); //kad se klikne na svakog igraca da se prikazu njegovi podaci, koristi se metoda show() iz PlayersController.php
