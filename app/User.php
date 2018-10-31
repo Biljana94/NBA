@@ -16,8 +16,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'password_confirmation'
     ];
+
+
+    //validaciona pravila koja cemo koristiti u RegisterController.php
+    const VALIDATION_RULES = [
+        'name' => 'required | min:3 | max:30',
+        'email' => 'required | email',
+        'password' => 'required | confirmed:password_confirmation | min:6',
+        'password_confirmation' => ''
+    ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,4 +37,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    
 }
