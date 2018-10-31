@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class TeamsController extends Controller
 {
+    //middleware
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $teams = Team::all(); //ovde stavljamo sve timove u varijablu $teams

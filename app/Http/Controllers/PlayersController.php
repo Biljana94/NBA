@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PlayersController extends Controller
 {
+    //middleware
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {

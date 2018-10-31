@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+
+    
+    public function __construct()
+    {
+        //middleware koji zabranjuje gostu stranice da nista ne vidi sem logina i registracije
+        $this->middleware('guest', ['except' => 'logout']); //gostu je zabranjeno da se izloguje (i vidi stranice timova i igraca)
+    }
+
     //view za login rutu, kad korisnik hoce da se uloguje
     public function index()
     {

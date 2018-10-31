@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
+
+    public function __construct()
+    {
+        //middleware
+        $this->middleware('guest'); //gostu koji je ulogovan je zabranjeno da se uloguje i registruje
+    }
+
     //kreiramo novog korisnika
     public function create()
     {
@@ -29,7 +36,7 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        session()->flash('message', 'Hvala sto ste se registrovali');
+        session()->flash('message', 'Hvala sto ste se registrovali!');
 
         return redirect('/');
     }
