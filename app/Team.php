@@ -14,4 +14,10 @@ class Team extends Model
         return $this->hasMany(Player::class); //uzimamo sve igrace tog tima
     }
 
+    //tim ima vise komentara - relacija
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

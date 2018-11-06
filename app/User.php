@@ -22,9 +22,9 @@ class User extends Authenticatable
 
     //validaciona pravila koja cemo koristiti u RegisterController.php
     const VALIDATION_RULES = [
-        'name' => 'required | min:3 | max:30',
-        'email' => 'required | email',
-        'password' => 'required | confirmed:password_confirmation | min:6',
+        'name' => 'required|min:3|max:30',
+        'email' => 'required|email',
+        'password' => 'required|confirmed:password_confirmation|min:6',
         'password_confirmation' => ''
     ];
 
