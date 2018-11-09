@@ -30,7 +30,7 @@ class CommentsController extends Controller
         // );
 
         $comment = new Comment(); //instanciramo Comment.php model
-        $comment->user_id = auth()->user()->id; //u komentare dodeljujemo user_id-u autentifikovanog usera sa njegovim licnim id
+        $comment->user_id = auth()->user()->id; //u komentare dodeljujemo user_id-u autentifikovanog usera sa njegovim licnim id (OVDE SMO USERU KOJI JE AUTENTIF OMOGUCILI DA NE MORA DA PISE SVOJE IME, VEC SE KAO AUTOR KOMENTARA AUTOMATSKI NAVODI ULOGOVAN USER)
         $comment->team_id = $team_id; //u komentar dodeljujemo na team_id id tog tima koji smo definisali gore
         $comment->content = request('content'); //kad upisemo kontent u komentar saljemo request sa tim kontentom da ga ubacimo u bazu
         $comment->save(); // cuvamo komentar u bazi

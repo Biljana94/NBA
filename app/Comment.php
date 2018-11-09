@@ -20,7 +20,7 @@ class Comment extends Model
         return $this->belongsTo(Team::class); //komentar pripada nekom timu
     }
 
-    //autor komentara
+    //user koji je napisao komentar, relacija -RELACIJE UVEK PISEMO U MODELU
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -28,9 +28,5 @@ class TeamsController extends Controller
         return view('teams.show', ['team' => $team]); //i vracamo svaki tim posebno
     }
 
-    //tim ima vise komentara - relacija
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
+
 }

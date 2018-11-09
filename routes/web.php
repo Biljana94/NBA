@@ -25,10 +25,13 @@ Route::get('/register', 'RegisterController@create'); //ruta za kreiranje korisn
 Route::post('/register', 'RegisterController@store'); //ruta za cuvanje korisnika, kad se user registruje korisnik se cuva u bazi podataka
 
 
+//verifikacija
+Route::get('/verify/{verification_code}', 'RegisterController@verify');
+
 
 //login
 Route::get('/login', 'LoginController@index')->name('login'); //middleware(auth)-gost stranice moze da vidi samo login stranicu
-Route::post('/login', 'LoginController@login'); //login metoda iz LoginController.php, ne mozemo staviti samo praznu rutu, a metoda login ce nas redirektovati na stranicu svih timova kad se ulogujemo
+Route::post('/login', 'LoginController@login')->middleware('verify.email'); //login metoda iz LoginController.php, ne mozemo staviti samo praznu rutu, a metoda login ce nas redirektovati na stranicu svih timova kad se ulogujemo
 
 
 //komentari
@@ -36,4 +39,4 @@ Route::post('/teams/{team_id}/comments', 'CommentsController@store'); //ruta za 
 
 
 //logout
-Route::get('/logout', 'LoginController@logout')->middleware('auth');
+Route::get('/logout', 'LoginController@logout');

@@ -12,6 +12,10 @@
             <div class="alert alert-success">
                 {{ $flash }}
             </div>
+        @elseif ($flash = session('warning'))
+            <div class="alert alert-danger">
+                {{ $flash }}
+            </div>
         @endif
 
         @include('layouts.partials.header') <!--ukljucili smo header-->

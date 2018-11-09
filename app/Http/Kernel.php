@@ -60,6 +60,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'verify.email' => \App\Http\Middleware\AccountIsVerified::class, //nas middleware koji smo sami pravili smo registrovali u Kernel.php
     ];
 
     /**

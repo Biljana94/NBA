@@ -16,14 +16,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'password_confirmation'
+        'name', 'email', 'password', 'is_verified', 'verification_code'
     ];
 
 
     //validaciona pravila koja cemo koristiti u RegisterController.php
     const VALIDATION_RULES = [
         'name' => 'required|min:3|max:30',
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users',
         'password' => 'required|confirmed:password_confirmation|min:6',
         'password_confirmation' => ''
     ];
