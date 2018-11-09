@@ -61,6 +61,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'verify.email' => \App\Http\Middleware\AccountIsVerified::class, //nas middleware koji smo sami pravili smo registrovali u Kernel.php
+        'bad.words' => \App\Http\Middleware\BadWordsInComments::class, //custom middleware za nedozvoljene reci na sajtu
     ];
 
     /**

@@ -35,7 +35,7 @@ Route::post('/login', 'LoginController@login')->middleware('verify.email'); //lo
 
 
 //komentari
-Route::post('/teams/{team_id}/comments', 'CommentsController@store'); //ruta za komentare, kad se postavi komentar da se stavi u bazu podataka
+Route::post('/teams/{team_id}/comments', 'CommentsController@store')->middleware('bad.words'); //ruta za komentare, kad se postavi komentar da se stavi u bazu podataka
 
 
 //logout
