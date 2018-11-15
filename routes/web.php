@@ -38,5 +38,11 @@ Route::post('/login', 'LoginController@login')->middleware('verify.email'); //lo
 Route::post('/teams/{team_id}/comments', 'CommentsController@store')->middleware('bad.words'); //ruta za komentare, kad se postavi komentar da se stavi u bazu podataka
 
 
+//news
+Route::get('/news', 'NewsController@index'); //ruta za sve vesti
+Route::get('/news/{id}', 'NewsController@show'); //ruta za svaku vest posebno
+
+
+
 //logout
 Route::get('/logout', 'LoginController@logout');

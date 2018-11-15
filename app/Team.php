@@ -20,4 +20,10 @@ class Team extends Model
         return $this->hasMany(Comment::class);
     }
 
+    //tim ima vise vesti - relacija
+    // public function news()
+    // {
+    //     return $this->hasMany(News::class);
+    // }
+
 }
