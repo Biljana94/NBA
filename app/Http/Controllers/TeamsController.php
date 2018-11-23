@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\News;
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -24,7 +25,7 @@ class TeamsController extends Controller
     public function show($id)
     {
 
-        $team = Team::findOrFail($id); //smestamo u ovu varijablu tim po $id
+        $team = Team::with('news')->findOrFail($id); //smestamo u ovu varijablu tim po $id
         return view('teams.show', ['team' => $team]); //i vracamo svaki tim posebno
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\News;
 use App\User;
+use App\Team;
 
 class NewsController extends Controller
 {
@@ -28,5 +29,12 @@ class NewsController extends Controller
         $news = News::findOrFail($id); //ovde smestamo vest po 'id' u promenljivu $news;
         // dd($news);
         return view('news.show', ['news' => $news]); //vracamo view
+    }
+
+    //
+    public function newsTeam(Team $team) {
+        // $team = Team::where('name', $team);
+        $allNews = $team->news()->with('teams')->paginate(2);
+        return view('news.index', ['allNews' => $allNews]);
     }
 }

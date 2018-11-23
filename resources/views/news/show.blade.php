@@ -14,6 +14,12 @@
             <li> {{ $news->content }} </li>
             <li>Author: {{ $news->user->name }} </li>
         </ul> 
+
+        <ul>
+            @foreach ($news->teams as $team)
+                <a href="/news/team/{{$team->name}}">{{$team->name}}</a>
+            @endforeach
+        </ul>
         
     </div>
 @endsection

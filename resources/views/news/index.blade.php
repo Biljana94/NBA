@@ -9,6 +9,8 @@
     <div class="blog-post">
         <h2 class="blog-post-title">All News</h2>
 
+        
+
         <ul>
             @foreach ($allNews as $news)
                 <li>
@@ -18,6 +20,8 @@
                 </li>
 
                 <li>Author: {{ $news->user->name }} </li> <!--ime usera koji je napisao vest-->
+
+
             @endforeach
         </ul>
     </div>
@@ -29,5 +33,5 @@
         {{-- Page {{ $allNews->currentPage() }} of {{ $allNews->lastPage() }} --}}
     </nav>
 
-    {{ $allNews->links() }}
+    {{ $allNews->links() }} {{-- linkovi za stranice --}}
 @endsection

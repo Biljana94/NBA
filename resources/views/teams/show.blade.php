@@ -7,6 +7,9 @@
 
 
 @section('content')
+
+    {{-- <a class="" href="/teams/{{ $team-id }}/news">All Teams</a>
+    <a>Team News</a> --}}
     
     <div class="blog-post">
         <h3 class="blog-post-title">{{ $team->name }}</h3>

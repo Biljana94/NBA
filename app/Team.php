@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Player;
+use App\News;
 use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
@@ -21,9 +22,14 @@ class Team extends Model
     }
 
     //tim ima vise vesti - relacija
-    // public function news()
-    // {
-    //     return $this->hasMany(News::class);
-    // }
+    public function news()
+    {
+        return $this->belongsToMany(News::class);
+    }
+
+    //uzimamo ime tima
+    public function getRouteKeyName() {
+        return 'name';
+    }
 
 }

@@ -42,6 +42,9 @@ Route::post('/teams/{team_id}/comments', 'CommentsController@store')->middleware
 Route::get('/news', 'NewsController@index'); //ruta za sve vesti
 Route::get('/news/{id}', 'NewsController@show'); //ruta za svaku vest posebno
 
+//JAKO GLUPA RUTA
+Route::get('news/team/{team}', 'NewsController@newsTeam');
+
 
 
 //logout
